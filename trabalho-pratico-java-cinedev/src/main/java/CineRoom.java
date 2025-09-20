@@ -39,4 +39,24 @@ public class CineRoom {
             System.out.println(); // quebra a linha
         }
     }
+
+    public void buyTicket(int queue, int seat) {
+        //variaveis para operação
+        int cordQueue = queue - 1;
+        int cordSeat = seat - 1;
+        showSeats();
+
+        if ((queue >= 1 && queue <= 10) && (seat >= 1 && seat <= 20)) {
+            if (this.seats[cordQueue][cordSeat] == 'L') {
+                System.out.println("Assento reservado com sucesso, compra concluida.");
+                this.seats[cordQueue][cordSeat] = 'X';
+            } else {
+                System.out.println("Lugar ja reservado");
+                return;
+            }
+        } else {
+            System.out.println("Não existe nenhum assento nas coordenadas informadas");
+            return;
+        }
+    }
 }
