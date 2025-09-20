@@ -1,0 +1,42 @@
+
+public class CineRoom {
+
+    private char[][] seats; //Declarando o attributo assentos(matriz) da classe(sala)
+
+    //Método construtor 
+    public CineRoom() {
+        this.seats = new char[10][20]; // Cria a matriz 10x20
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 20; j++) {
+                this.seats[i][j] = 'L'; // Define TODOS como Livres
+            }
+        }
+    }
+
+    //Métodos
+    public void showSeats() { //Método para o mapeamento da sala
+        //Print das colunas: 
+        System.out.print("Assentos:");
+        for (int i = 1; i <= 20; i++) {
+            if (i < 10) {
+                System.out.print("  " + i); // Dois espaços antes dos números 1-9
+            } else {
+                System.out.print(" " + i);  // Um espaço antes dos números 10-20
+            }
+        }
+        System.out.println();
+
+        for (int i = 0; i < this.seats.length; i++) {   // percorre as linhas
+            if ((i + 1) < 10) {
+                System.out.print("Fila  " + (i + 1) + ":"); // Dois espaços após "Fila" para alinhar com "10"
+            } else {
+                System.out.print("Fila " + (i + 1) + ":");  // Um espaço após "Fila" para a fileira 10
+            }
+
+            for (int j = 0; j < this.seats[i].length; j++) {     // percorre as colunas
+                System.out.print("[" + this.seats[i][j] + "]"); // Assentos colados: [L][X][L]  ocupam 3 chars cada
+            }
+            System.out.println(); // quebra a linha
+        }
+    }
+}
