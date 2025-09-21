@@ -4,18 +4,23 @@ public class Main {
     public static void main(String[] args) {
         CineRoom sala = new CineRoom();
 
-        System.out.println("=== TESTE 1: Exibindo mapa inicial (todos livres) ===");
-        sala.showSeats();
-
-        System.out.println("\n=== TESTE 2: Comprando assento válido (Fileira 1, Assento 1) ===");
+        // 1. Compra um assento
+        System.out.println("\n=== TESTE 1: Comprando assento 1 da fileira 1 ===");
         sala.buyTicket(1, 1);
 
-        System.out.println("\n=== TESTE 3: Tentando comprar o mesmo assento novamente ===");
-        sala.buyTicket(1, 1);
+        // 2. Cancela a compra
+        System.out.println("\n=== TESTE 2: Cancelando assento 1 da fileira 1 ===");
+        sala.cancelTicket(1, 1);
 
-        System.out.println("\n=== TESTE 4: Tentando comprar assento fora do limite (Fileira 15, Assento 5) ===");
-        sala.buyTicket(15, 5);
+        // 3. Tenta cancelar assento já livre
+        System.out.println("\n=== TESTE 3: Tentando cancelar assento já livre ===");
+        sala.cancelTicket(1, 1);
 
+        // 4. Tenta cancelar assento inválido
+        System.out.println("\n=== TESTE 4: Tentando cancelar com coordenadas inválidas ===");
+        sala.cancelTicket(99, 5);
+
+        // 5. Mostra estado final
         System.out.println("\n=== ESTADO FINAL DA SALA ===");
         sala.showSeats();
     }

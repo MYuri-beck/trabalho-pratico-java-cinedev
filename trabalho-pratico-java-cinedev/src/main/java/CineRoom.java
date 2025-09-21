@@ -59,4 +59,23 @@ public class CineRoom {
             return;
         }
     }
+
+    public void cancelTicket(int queue, int seat) { //Lógica reversa em relação ao buyTicket
+        int cordQueue = queue - 1;
+        int cordSeat = seat - 1;
+
+        if ((queue >= 1 && queue <= 10) && (seat >= 1 && seat <= 20)) {
+            if (this.seats[cordQueue][cordSeat] == 'X') { //Se o assento estiver ocupado
+                System.out.println("Reserva cancelada com sucesso.");
+                this.seats[cordQueue][cordSeat] = 'L'; // libetra
+
+            } else {
+                System.out.println("O lugar ja está livre");
+                return;
+            }
+        } else {
+            System.out.println("Não existe nenhum assento nas coordenadas informadas");
+            return;
+        }
+    }
 }
