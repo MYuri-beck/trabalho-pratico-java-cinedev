@@ -2,21 +2,21 @@ public class Main {
     public static void main(String[] args) {
         CineRoom sala = new CineRoom();
 
-        System.out.println("\n=== TESTE 1: Relatório inicial (todos livres) ===");
+        System.out.println("=== TESTE 1: Relatório inicial (todos livres) ===");
         sala.occupancyReport();
 
-        System.out.println("\n\n=== TESTE 2: Comprando 3 assentos ===");
+        System.out.println("=== TESTE 2: Comprando 3 assentos ===");
         sala.buyTicket(1, 1); // Ocupa 1 assento
         sala.buyTicket(1, 2); // Ocupa outro
         sala.buyTicket(2, 1); // Ocupa mais um
 
-        System.out.println("\n=== TESTE 3: Relatório após 3 compras ===");
+        System.out.println("=== TESTE 3: Relatório após 3 compras ===");
         sala.occupancyReport();
 
-        System.out.println("\n\n=== TESTE 4: Cancelando 1 assento ===");
+        System.out.println("=== TESTE 4: Cancelando 1 assento ===");
         sala.cancelTicket(1, 1); // Libera 1
 
-        System.out.println("\n=== TESTE 5: Relatório final ===");
+        System.out.println("=== TESTE 5: Relatório final ===");
         sala.occupancyReport();
     }
 }
