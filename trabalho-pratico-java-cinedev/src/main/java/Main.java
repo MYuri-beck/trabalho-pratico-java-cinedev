@@ -1,28 +1,22 @@
-
-
 public class Main {
     public static void main(String[] args) {
         CineRoom sala = new CineRoom();
 
-        // 1. Compra um assento
-        System.out.println("\n=== TESTE 1: Comprando assento 1 da fileira 1 ===");
-        sala.buyTicket(1, 1);
+        System.out.println("\n=== TESTE 1: Relatório inicial (todos livres) ===");
+        sala.occupancyReport();
 
-        // 2. Cancela a compra
-        System.out.println("\n=== TESTE 2: Cancelando assento 1 da fileira 1 ===");
-        sala.cancelTicket(1, 1);
+        System.out.println("\n\n=== TESTE 2: Comprando 3 assentos ===");
+        sala.buyTicket(1, 1); // Ocupa 1 assento
+        sala.buyTicket(1, 2); // Ocupa outro
+        sala.buyTicket(2, 1); // Ocupa mais um
 
-        // 3. Tenta cancelar assento já livre
-        System.out.println("\n=== TESTE 3: Tentando cancelar assento já livre ===");
-        sala.cancelTicket(1, 1);
+        System.out.println("\n=== TESTE 3: Relatório após 3 compras ===");
+        sala.occupancyReport();
 
-        // 4. Tenta cancelar assento inválido
-        System.out.println("\n=== TESTE 4: Tentando cancelar com coordenadas inválidas ===");
-        sala.cancelTicket(99, 5);
+        System.out.println("\n\n=== TESTE 4: Cancelando 1 assento ===");
+        sala.cancelTicket(1, 1); // Libera 1
 
-        // 5. Mostra estado final
-        System.out.println("\n=== ESTADO FINAL DA SALA ===");
-        sala.showSeats();
+        System.out.println("\n=== TESTE 5: Relatório final ===");
+        sala.occupancyReport();
     }
-    
 }

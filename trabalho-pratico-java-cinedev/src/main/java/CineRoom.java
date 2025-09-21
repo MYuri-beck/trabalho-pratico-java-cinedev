@@ -78,4 +78,30 @@ public class CineRoom {
             return;
         }
     }
+
+    public void occupancyReport() {
+        int occupiedSeats = 0;
+        int totalSeats = 0;
+
+        for (int i = 0; i < this.seats.length; i++) {   // percorre as linhas
+            for (int j = 0; j < this.seats[i].length; j++) { // percorre as colunas
+                totalSeats++; // Conta o total de assentos
+
+                if (this.seats[i][j] == 'X') { // Se o assento estiver ocupado ( "X" como ocupado)
+                    occupiedSeats++; // Conta os assentos ocupados
+                }
+            }
+        }
+        // Calculo do percentual de ocupação 
+        double occupancyPercentage = ((double) occupiedSeats / totalSeats) * 100;
+
+        //Calculo de assentos livres
+        int freeSeats = totalSeats - occupiedSeats;
+
+        // Exibição do relatorio
+        System.out.println("Total de assentos: " + totalSeats);
+        System.out.println("Assentos ocupados: " + occupiedSeats);
+        System.out.println("Assentos livres: " + freeSeats);
+        System.out.printf("Percentual de ocupação: %.2f", occupancyPercentage);
+    }
 }
