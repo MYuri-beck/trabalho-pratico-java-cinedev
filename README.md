@@ -1,7 +1,7 @@
  Sistema de Gerenciamento de Assentos para Cinema "CineDev"
 
 **Nome:** Yuri Mendes Beck  
-**Matrícula:** 36420
+**Matrícula:** 360420
 
 ## 📌 Descrição do Projeto
 
